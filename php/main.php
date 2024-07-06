@@ -61,8 +61,7 @@
 								<input type='hidden' name='block-id' value='{$block->getId()}'/>
 							</form>
 							<h3>{$block->getTitle()}</h3>
-							<p>{$block->getInfo()}</p>
-							<p>{$block->getId()}</p>";
+							<p>{$block->getInfo()}</p>";
 	}
 
 	function renderAllBlocks($conn, $blocks, &$renderedBlocksId) {

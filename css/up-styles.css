@@ -1,0 +1,266 @@
+body {
+	background-color: #F9F9F9;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div#modal-w {
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+
+	backdrop-filter: blur(3px);
+
+	display: none;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+div#modal-w form {
+	background-color: #FFF;
+
+	padding: 5rem 8rem;
+	border: .1rem solid #EEE;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+div#modal-w form label {
+	margin-bottom: .4rem;
+
+	color: #7D7D7D;
+	font-size: 1.8rem;
+	line-height: 2.2rem;
+	user-select: none;
+}
+
+div#modal-w form textarea {
+	resize: vertical;
+	min-height: 5rem;
+	max-height: 27rem;
+	text-align: justify;
+}
+
+div#modal-w form input[type='text'],
+div#modal-w form textarea {
+	margin-bottom: 2rem;
+	padding: 1rem;
+	width: 100%;
+
+	color: #7D7D7D;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	border: .1rem solid #EEE;
+}
+
+div#modal-w form input[type='text']:focus,
+div#modal-w form textarea:focus {
+	background-color: #F6FFFC;
+
+	color: #206F3B;
+	font-weight: 700;
+	border-color: #206F3B;
+}
+
+div#modal-w form input[type='submit'] {
+	padding: 1rem;
+	margin: 0 auto;
+
+	cursor: pointer;
+
+	min-width: 30%;
+	color: #FFF;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	border: .1rem solid #83BEFF;
+	background-color: #1478E8;
+
+	transition: all 300ms ease-in-out;
+}
+
+#main-container {
+	width: 1200px;
+	min-height: 100vh;
+
+	position: relative;
+
+	/* background-color: #FFF; */
+	display: flex;
+	flex-direction: column;
+}
+
+#main-container #navbar {
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	padding: 1rem 0;
+	
+	border-bottom: .1rem solid #666;
+
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#main-container #navbar h2 {
+	padding: 1rem 0;
+	font-size: 2rem;
+	line-height: 2.4rem;
+	user-select: none;
+}
+
+#main-container #navbar form input[type='submit'] {
+	padding: 1rem;
+	margin: 0 auto;
+
+	cursor: pointer;
+
+	min-width: 30%;
+	color: #FFF;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	border: .1rem solid #83BEFF;
+	background-color: #1478E8;
+
+	transition: all 300ms ease-in-out;
+}
+
+#main-container #navbar form input[type='submit']:hover {
+	color: #206F3B;
+	background-color: #FFF;
+	border-color: #206F3B;
+}
+
+#main-container #navbar,
+#main-container #footer {
+	position: absolute;
+	min-height: 6.6rem;
+}
+
+#main-container #footer {
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	padding: 1rem 0;
+	
+	border-top: .1rem solid #666;
+	font-size: 2rem;
+	line-height: 2.4rem;
+
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+#main-container #main-block {
+	z-index: 99;
+	min-height: calc(100vh - 13.2rem);
+	margin: 7.6rem 0 7.1rem;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+#main-container #main-block button#mainBlockAddBtn,
+#main-container #main-block div.block {
+	margin-bottom: .5rem;
+}
+
+#main-container #main-block form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+#main-container #main-block button {
+	padding: 1rem;
+	margin: 0 auto;
+
+	cursor: pointer;
+	
+	color: #FFF;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	border: .1rem solid #83BEFF;
+	background-color: #1478E8;
+
+	transition: all 300ms ease-in-out;
+}
+
+#main-container #main-block button:hover {
+	color: #206F3B;
+	background-color: #FFF;
+	border-color: #206F3B;
+}
+
+div.block {
+	min-width: 50%;
+	position: relative;
+	margin: 0 auto;
+
+	text-align: center;
+	border: .1rem solid #666;
+	padding: 1rem;
+}
+
+div.block h3 {
+	margin: 0 5rem .5rem;
+	font-size: 2rem;
+	line-height: 2rem;
+}
+
+div.block p {
+	font-size: 1.6rem;
+	line-height: 2rem;
+}
+
+div#main-container div#main-block div.block form input[type='submit'],
+div#main-container div#main-block div.block form input[type='button'] {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+
+	padding: 0;
+	width: 2rem;
+	height: 2rem;
+
+	cursor: pointer;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+	color: #FFF;
+	background-color: #BA5053;
+	border: .1rem solid #666;
+}
+
+div#main-container div#main-block div.block form input[type='button'] {
+	right: 3.5rem;
+	color: #FFF;
+	background-color: #67AA7E;
+}
+
+@media(max-width: 1200px) {
+	#main-container,
+	#main-container #navbar,
+	#main-container #footer {
+		padding: 2%;
+	}
+}

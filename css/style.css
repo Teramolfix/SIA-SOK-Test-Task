@@ -1,0 +1,45 @@
+/* Reset */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+/* Utility Components */
+:root {
+	font-size: 62.5%;
+}
+*:focus-visible {
+	outline: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+}
+
+body * {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	color: black;
+	overflow: hidden;
+}
+
+/* List Items */
+li {
+	list-style: none;
+}
+
+/* Abchor Tags */
+a:link,
+a:visited {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.5rem;
+}

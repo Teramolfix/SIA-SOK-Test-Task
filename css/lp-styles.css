@@ -1,0 +1,104 @@
+body {
+	background-color: #F9F9F9;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#main-container {
+	max-width: 1200px;
+	width: 40%;
+	height: 40%;
+	background-color: #FFF;
+
+	padding: 5rem 8rem;
+	border: .1rem solid #EEE;
+}
+
+#main-container form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+#main-container form label {
+	margin-bottom: .4rem;
+
+	color: #7D7D7D;
+	font-size: 1.8rem;
+	line-height: 2.2rem;
+	user-select: none;
+}
+
+#main-container form input[type='text'],
+#main-container form input[type='password'] {
+	margin-bottom: 2rem;
+	padding: 1rem;
+	width: 100%;
+
+	color: #7D7D7D;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	border: .1rem solid #EEE;
+}
+
+#main-container form input[type='text']:focus,
+#main-container form input[type='password']:focus {
+	background-color: #F6FFFC;
+
+	color: #206F3B;
+	font-weight: 700;
+	border-color: #206F3B;
+}
+
+#main-container form input[type='submit'] {
+	padding: 1rem;
+	margin: 1rem auto 0;
+
+	cursor: pointer;
+
+	min-width: 30%;
+	color: #FFF;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	border: .1rem solid #83BEFF;
+	background-color: #1478E8;
+
+	transition: all 300ms ease-in-out;
+}
+
+#main-container form input[type='submit']:hover {
+	color: #206F3B;
+	background-color: #FFF;
+	border-color: #206F3B;
+}
+
+@media(max-width: 950px) {
+	#main-container {
+		width: auto;
+	}
+}
+
+@media(max-width: 370px) {
+	#main-container {
+		padding: 5% 8%;
+	}
+	#main-container form label,
+	#main-container form input[type='text'], #main-container form input[type='password'],
+	#main-container form input[type='submit'] {
+    font-size: 4vw;
+    line-height: 6vw;
+	}
+	#main-container form label {
+		margin-bottom: 4%;
+	}
+	#main-container form input[type='text'], #main-container form input[type='password'] {
+		margin-bottom: 8%;
+	}
+	#main-container form input[type='submit'] {
+		margin: 0 auto;
+		padding: 5%;
+	}
+}

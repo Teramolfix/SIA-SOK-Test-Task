@@ -1,3 +1,39 @@
+<?php
+	require_once './php/Database.php';
+	require_once './php/main.php';
+	$db = new Database();
+	$conn = $db->getConnection();
+
+	if (checkToken($conn) == false) {
+		header("Location: ./login");
+	}
+
+	if(isset($_POST['delete_block-btn'])) {
+		$blockId = $_POST['block-id'];
+		deleteBlock($conn, $blockId);
+		header("Location: " . $_SERVER['PHP_SELF']);
+	}
+
+	if(isset($_POST['add-btn'])) {
+		$title = $_POST['title'];
+		$info = $_POST['info'];
+		if($_COOKIE['parent_id']) {
+			$parentId = $_COOKIE['parent_id'];
+		} else {
+			$parentId = '0';
+		}
+		createBlock($conn, $parentId, $title, $info);
+		header("Location: " . $_SERVER['PHP_SELF']);
+	}
+
+	if(isset($_POST['logout-btn'])) {
+		setcookie('TOKEN', '', time() - 3600, '/');
+		header('Location: ./login');
+	}
+
+	$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,42 +52,6 @@
 	<title>SIA "SOK" Test Task</title>
 </head>
 <body>
-
-	<?php
-		require_once './php/Database.php';
-		require_once './php/main.php';
-		$db = new Database();
-		$conn = $db->getConnection();
-
-		if (checkToken($conn) == false) {
-			header("Location: ./login");
-		}
-
-		if(isset($_POST['delete_block-btn'])) {
-			$blockId = $_POST['block-id'];
-			deleteBlock($conn, $blockId);
-			header("Location: " . $_SERVER['PHP_SELF']);
-		}
-
-		if(isset($_POST['add-btn'])) {
-			$title = $_POST['title'];
-			$info = $_POST['info'];
-			if($_COOKIE['parent_id']) {
-				$parentId = $_COOKIE['parent_id'];
-			} else {
-				$parentId = '0';
-			}
-			createBlock($conn, $parentId, $title, $info);
-			header("Location: " . $_SERVER['PHP_SELF']);
-		}
-
-		if(isset($_POST['logout-btn'])) {
-			setcookie('TOKEN', '', time() - 3600, '/');
-			header('Location: ./login');
-		}
-
-		$conn->close();
-	?>
 
 	<div id="modal-w">
 		<form id="auth_form" method="POST">
